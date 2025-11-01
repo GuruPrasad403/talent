@@ -10,8 +10,6 @@ app.get("/health", (req,res,next)=>{
     });
 });
 
-
-
 // make our app ready for the deployment. 
 const __dirname = path.resolve();
 if(ENV.NODE_ENV === "production"){
