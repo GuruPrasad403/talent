@@ -1,6 +1,7 @@
 import express from 'express'
 import { ENV } from './config/env.js';
 import path from 'path';
+import './config/db.js'
 const app = express();
 
 
