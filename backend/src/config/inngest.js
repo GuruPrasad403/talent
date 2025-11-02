@@ -23,7 +23,7 @@ console.log(event.data)
     await UserModel.create(newUser);
     // adding user in the stream 
     await updateUser({
-        userId : newUser.clerkId.toString(),
+        id : newUser.clerkId.toString(),
         name : newUser.name,
         image : newUser.profileImage 
 
