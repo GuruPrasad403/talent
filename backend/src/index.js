@@ -3,7 +3,8 @@ import { ENV } from './config/env.js';
 import path from 'path';
 import cors from 'cors'
 import './config/db.js'
-import { inngest } from './config/inngest';
+import { functions, inngest } from './config/inngest.js';
+import {serve} from 'inngest/express'
 const app = express();
 app.use(cors(
     {origin:ENV.CLIENT_URL,
@@ -11,7 +12,7 @@ app.use(cors(
     }
 ))
 app.use(express.json());
-
+app.get("/api/inngest", serve({client:inngest, functions}))
 app.get("/health", (req,res,next)=>{
     res.status(200).json({
         msg :"Hi from the server"
