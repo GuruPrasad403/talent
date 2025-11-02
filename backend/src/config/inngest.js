@@ -1,5 +1,5 @@
-import {Ingest, Inngest} from 'inngest'
-import {connectToDB} from "../config/db.js"
+import { Inngest} from 'inngest'
+import connectToDB from "../config/db.js"
 import UserModel from '../models/User.js'
 
 export const inngest =  new Inngest({id : "talent"});
