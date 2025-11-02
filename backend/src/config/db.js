@@ -11,3 +11,5 @@ async function connectToDB(){
     }
 }
 connectToDB();
+
+export default connectToDB;
