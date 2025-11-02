@@ -1,33 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { SignedIn, SignedOut, SignIn, SignInButton, SignOutButton, UserButton } from '@clerk/clerk-react'
 
+/**
+ * Root React component that renders the app header and Clerk authentication UI.
+ *
+ * Renders a welcome heading, a SignOutButton when a user is signed in, a SignInButton (modal) when signed out, and a persistent UserButton.
+ * @returns {JSX.Element} The application's top-level UI fragment.
+ */
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+     <h1>Welcome to My Application</h1>
+     <SignedIn>
+      <SignOutButton />
+     </SignedIn>
+     <SignedOut>
+      <SignInButton mode='modal'/>
+     </SignedOut>
+     <UserButton />
     </>
   )
 }
