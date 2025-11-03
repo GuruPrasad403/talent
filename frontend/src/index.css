@@ -1,3 +1,6 @@
+
+@import "tailwindcss";
+@plugin "daisyui";
 .cl-internal-1dauvpw, .cl-internal-l2l775{
     display:none;
 }

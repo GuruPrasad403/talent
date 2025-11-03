@@ -1,5 +1,9 @@
+import { Navigate, Route, Routes } from 'react-router'
 import './App.css'
-import { SignedIn, SignedOut, SignIn, SignInButton, SignOutButton, UserButton } from '@clerk/clerk-react'
+import { useUser } from '@clerk/clerk-react'
+import HomePage from './pages/HomePage'
+import ProblemPage from './pages/ProblemPage'
+import { Toaster } from 'react-hot-toast'
 
 /**
  * Root React component that renders the app header and Clerk authentication UI.
@@ -8,17 +12,15 @@ import { SignedIn, SignedOut, SignIn, SignInButton, SignOutButton, UserButton } 
  * @returns {JSX.Element} The application's top-level UI fragment.
  */
 function App() {
-
+// clrek give useUser hook to check weather the user is signed or not. 
+const {isSigned} = useUser()
   return (
     <>
-     <h1>Welcome to My Application</h1>
-     <SignedIn>
-      <SignOutButton />
-     </SignedIn>
-     <SignedOut>
-      <SignInButton mode='modal'/>
-     </SignedOut>
-     <UserButton />
+      <Routes>
+        <Route path ="/" element={<HomePage></HomePage>}></Route>
+        <Route path ="/problem-page" element={isSigned ? <ProblemPage></ProblemPage> : <Navigate to={"/"}></Navigate>}></Route>
+      </Routes>
+      <Toaster />
     </>
   )
 }
