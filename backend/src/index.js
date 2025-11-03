@@ -7,6 +7,7 @@ import { functions, inngest } from './config/inngest.js';
 import {serve} from 'inngest/express'
 import  {clerkMiddleware} from '@clerk/express'
 import chatRouter from './routes/chatRouter.js'
+import sessionRouter from './routes/sessionRouter.js'
 const app = express();
 app.use(cors(
     {origin:ENV.CLIENT_URL,
@@ -24,6 +25,7 @@ app.get("/health", (req,res,next)=>{
 // All router starts from here 
 // chat route 
 app.use("/api/chat", chatRouter)
+app.use("/api/sessions", sessionRouter)
 
 // make our app ready for the deployment. 
 const __dirname = path.resolve();
