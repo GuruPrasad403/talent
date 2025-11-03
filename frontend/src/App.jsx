@@ -4,7 +4,7 @@ import { useUser } from '@clerk/clerk-react'
 import HomePage from './pages/HomePage'
 import ProblemPage from './pages/ProblemPage'
 import { Toaster } from 'react-hot-toast'
-
+import Dashbord from './pages/Dashbord.jsx'
 /**
  * Root React component that renders the app header and Clerk authentication UI.
  *
@@ -17,7 +17,8 @@ const {isSigned} = useUser()
   return (
     <>
       <Routes>
-        <Route path ="/" element={<HomePage></HomePage>}></Route>
+        <Route path ="/" element={isSigned ? <HomePage></HomePage> : <Navigate to={"/dashboard"} />}  ></Route>
+        <Route path ="/dashbord" element={isSigned ? <Dashbord></Dashbord> : <Navigate to={"/"}></Navigate>}></Route>
         <Route path ="/problem-page" element={isSigned ? <ProblemPage></ProblemPage> : <Navigate to={"/"}></Navigate>}></Route>
       </Routes>
       <Toaster />
