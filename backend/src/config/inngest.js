@@ -28,6 +28,8 @@ console.log(event.data)
         image : newUser.profileImage 
 
     })
+
+    // we have to implement welcome email 
 }
 );
 const deleteUserFromDB = inngest.createFunction({

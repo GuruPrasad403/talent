@@ -19,7 +19,7 @@ const UserSchema = new mongoose.Schema({
         required : true,
         unique : true 
     }
-})
+}, {timestamps : true})
 
 const User = mongoose.model("User", UserSchema);
 export default User
