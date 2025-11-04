@@ -7,3 +7,14 @@
 .cl-internal-1dauvpw, .cl-internal-l2l775{
     display:none;
 }
+.cl-internal-14s4tiz{
+  width: 50px;
+  height: 50px;
+}
+
+@media screen and (max-width : 992px){
+  .cl-internal-14s4tiz{
+  width: 40px;
+  height: 40px;
+}
+}

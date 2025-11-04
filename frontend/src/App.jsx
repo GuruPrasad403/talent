@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage'
 import ProblemPage from './pages/ProblemPage'
 import { Toaster } from 'react-hot-toast'
 import Dashboard from './pages/Dashbord'
+import ProblemPageSession from './pages/ProblemPageSession'
 
 function App() {
   // Clerk provides the useUser hook to check if the user is signed in
@@ -24,6 +25,10 @@ function App() {
         <Route
           path="/problem-page"
           element={isSignedIn ? <ProblemPage /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/problem/:problemTtitle"
+          element={isSignedIn ? <ProblemPageSession /> : <Navigate to="/" />}
         />
       </Routes>
       <Toaster />

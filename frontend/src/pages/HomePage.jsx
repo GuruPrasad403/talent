@@ -4,7 +4,7 @@ import { SignInButton } from "@clerk/clerk-react";
 export default function HomePage() {
   return (
     <>      <div className="max-w-[1440px] mx-auto my-0 p-0">
-      <nav className="w-full flex justify-between items-center shadow-2xl  md:px-20 px-5 py-3">
+      <nav className="w-full flex justify-between items-center shadow-2xl  md:px-20 px-5 py-3 sticky">
         {/* Logo section */}
         <Link to="/"
           className="flex justify-center items-center cursor-pointer "
@@ -57,7 +57,7 @@ export default function HomePage() {
           <div className="flex mt-9">
             <div className="bg-black w-fit px-3 rounded-l-2xl">
               <h2 className="text-green-300 md:text-5xl text-3xl font-semibold">10K+</h2>
-              <span className="text-gray-400">Active Users</span>
+              <span className="text-gray-400">Active Users</span>   
             </div>
             <div className="bg-black w-fit px-3 ">
               <h2 className="text-green-400 md:text-5xl text-3xl font-semibold">50K+</h2>
